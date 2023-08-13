@@ -1,0 +1,101 @@
+* {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.back {
+    opacity: 0.8;
+    background-image: url(images/top.png);
+    background-size: cover;
+    position: fixed;
+    z-index: -10;
+    height: 100vh;
+    display: block;
+    width: 800px;
+}
+
+body {
+    width: 800px;
+    background-color: #333;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 50px;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    height: 250px;
+    background-color: #ffe5cc;
+}
+
+h1 {
+    border-bottom: 15px #ffff7f solid;
+    margin: 0;
+    padding: 100px 0 0 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+nav {
+    position: relative;
+    line-height: 70px;
+    background-color: rgba(0, 0, 5, 0.2);
+    height: 70px;
+    width: 800px;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    font-size: 80%;
+    z-index: 10;
+}
+
+.about {
+    border: none;
+    text-decoration: none;
+    color: #000;
+    line-height: 70px;
+    padding: 0 25px;
+    display: block;
+    float: right;
+    margin: 0px 20px;
+    background-color: rgba(255, 229, 204, 0.3);
+    transition: all 0.5s;
+    font-size: 80%;
+}
+
+.about:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.setting {
+    background-color: transparent;
+    border: none;
+    display: inline;
+    line-height: 70px;
+    margin-left: 30px;
+    font-size: 80%;
+}
+
+main {
+    display: flex;
+}
+
+canvas {
+    border: #333 solid 5px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 50px auto;
+    padding: 0;
+}
+
+.about-page {
+    border: #333 solid 5px;
+    font-size: 50%;
+    font-weight: 300;
+    height: 700px;
+    width: 700px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 50px auto;
+}
