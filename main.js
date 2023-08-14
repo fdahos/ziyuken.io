@@ -32,6 +32,25 @@ window.addEventListener("DOMContentLoaded", () => {
     judge();
 });
 
+const clean = () => {
+    context.clearRect(0, 0, 700, 700);
+    fin1 = {};
+    fin2 = {};
+    hit1 = [];
+    hit2 = [];
+    point = {};
+    check1 = [false, false, false, false, false];
+    check2 = [false, false, false, false, false];
+    f1 = 0;
+    f2 = 0;
+    binary1 = "";
+    binary2 = "";
+    result = "";
+    
+    draw();
+    judge();
+}
+
 const judge = () => {
     context.fillStyle = "rgba(0, 204, 255, 0.5)";
     fillRoundRect(225, 300, 250, 100, 50);
@@ -171,25 +190,31 @@ const game = () => {
         alert("その手は使えません(2)");
     };
     if(number1 != 0 && number2 != 0) {
-    f1 = 1;
-    while(number1 != number2) {
-        if(number1 == 31) {
-            number1 = 1;
-        } else {
-            number1 += 1;
+        f1 = 1;
+        while(number1 != number2) {
+            if(number1 == 31) {
+                number1 = 1;
+            } else {
+                number1 += 1;
+            }
+            f1 += 1;
         }
-        f1 += 1;
-    }
-    if(f1 == 1) {
-        result = "あいこ";
-    } else if(f1 > 16){
-        result = "1の勝ち";
-    } else {
-        result = "2の勝ち";
-    }
-    console.log(result);
-    }
-}
+        if(f1 == 1) {
+            result = "あいこ";
+        } else if(f1 > 16){
+            result = "１の勝ち";
+        } else {
+            result = "２の勝ち";
+        }
+        console.log(result);
+        context.font = '400 50px "游ゴシック体", "Hiragino Kaku Gothic ProN",sans-serif';
+        context.fillStyle = "#dfdfdf";
+        context.fillRect(0, 0, 700, 700);
+        context.fillStyle = "#333";
+        context.fillText(result ,(700 - result.length * 50) / 2, 365);
+        setTimeout(clean, 1000);
+    };
+};
 
 canvas.addEventListener("click", e => {
     const rect = canvas.getBoundingClientRect();
